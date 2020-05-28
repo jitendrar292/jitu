@@ -1,0 +1,9 @@
+https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-collapse.html  
+
+
+https://programming.vip/docs/request-body-search-query-body-in-elastic-search-api.html
+
+QueryBuilders qbWithArguments = QueryBuilders.boolQuery()
+                    .must(QueryBuilders.termQuery("A", "RF"))
+                    .must(QueryBuilders.termQuery("B", "EF"))
+                    .must(QueryBuilders.termQuery("C", "RF"));
