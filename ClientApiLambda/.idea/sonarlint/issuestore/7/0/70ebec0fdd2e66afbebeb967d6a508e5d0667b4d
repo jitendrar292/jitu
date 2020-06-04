@@ -1,0 +1,8 @@
+
+Tsquid:S1481&"1Remove this unused "objectMapper" local variable.(¡ôó‰ùÿÿÿÿ8­õÕõ”.
+lsquid:S1192."IDefine a constant instead of duplicating this literal "lastName" 3 times.(Î¥™úÿÿÿÿ8­õÕõ”.
+Xsquid:S1141>"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8­õÕõ”.
+Xsquid:S1141S"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8­õÕõ”.
+csquid:S1854&"@Remove this useless assignment to local variable "objectMapper".(¡ôó‰ùÿÿÿÿ8­õÕõ”.
+hsquid:S1192-"JDefine a constant instead of duplicating this literal "studentId" 3 times.(Ÿ®şí8­õÕõ”.
+Fsquid:S2140j")Use "java.util.Random.nextInt()" instead.(Ò¤”/8­õÕõ”.

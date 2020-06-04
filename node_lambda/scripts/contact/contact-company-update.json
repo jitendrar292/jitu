@@ -1,0 +1,10 @@
+{
+    "script" : {
+        "source": "for (int i = 0; i < ctx._source.offices.length; ++i) { if(ctx._source.offices[i].officeId == params.officeId) { for (int j = 0; j < ctx._source.offices[i].contacts.length; ++j) { if(ctx._source.offices[i].contacts[j].contactId == params.contact.contactId ) { ctx._source.offices[i].contacts[j] = params.contact } } }}",
+        "lang": "painless",
+        "params" : {
+            "officeId": null,
+            "contact": null
+        }
+    }
+}

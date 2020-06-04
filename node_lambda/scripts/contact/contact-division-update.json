@@ -1,0 +1,9 @@
+{
+    "script" : {
+        "source": "for (int i = 0; i < ctx._source.divisions.length; ++i) { if(ctx._source.divisions[i].divisionId == params.contact.divisionId ) { for (int j = 0; j < ctx._source.divisions[i].offices.length; ++j) { if(ctx._source.divisions[i].offices[j].officeId == params.contact.officeId ) { for (int k = 0; k < ctx._source.divisions[i].offices[j].contacts.length; ++k) { if( ctx._source.divisions[i].offices[j].contacts[k].contactId == params.contact.contactId ) { ctx._source.divisions[i].offices[j].contacts[k] = params.contact } } } } }}",
+        "lang": "painless",
+        "params" : {
+            "contact": null
+        }
+    }
+}

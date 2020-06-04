@@ -1,0 +1,68 @@
+
+Nsquid:S00108“")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ8¶±Õõ”.
+squid:S1157<"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(šÕ­ß8¶±Õõ”.
+usquid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´—ùÿÿÿÿ8¶±Õõ”.
+[
+squid:S106("9Replace this use of System.out or System.err by a logger.(®ì×ÿÿÿÿÿ8¶±Õõ”.
+V
+squid:S106@"9Replace this use of System.out or System.err by a logger.(ã³øÎ8¶±Õõ”.
+isquid:CommentedOutCodeLine0"<This block of commented-out lines of code should be removed.(ÄêàŠ8¶±Õõ”.
+isquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(‘Òä½8¶±Õõ”.
+V
+squid:S106^"9Replace this use of System.out or System.err by a logger.(±¬ï8¶±Õõ”.
+squid:S1157*"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(šÄ§¼8¶±Õõ”.
+V
+squid:S106y"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+V
+squid:S106{"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+[
+squid:S106'"9Replace this use of System.out or System.err by a logger.(ÚÏ–Æüÿÿÿÿ8¶±Õõ”.
+psquid:S00117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰”€8¶±Õõ”.
+usquid:S00117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´—ùÿÿÿÿ8¶±Õõ”.
+W
+squid:S106…"9Replace this use of System.out or System.err by a logger.(˜¹ôæ8¶±Õõ”.
+gsquid:S2583"CChange this condition so that it does not always evaluate to "true"(Ï…ºöúÿÿÿÿ8¶±Õõ”.
+}squid:S1171“"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8¶±Õõ”.
+[
+squid:S106i"9Replace this use of System.out or System.err by a logger.(ç‘ë®üÿÿÿÿ8¶±Õõ”.
+wsquid:S2293`"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰Æ‰ì8¶±Õõ”.
+jsquid:S1871<"LThis branch's code block is the same as the block for the branch on line 42.(šÕ­ß8¶±Õõ”.
+[
+squid:S106>"9Replace this use of System.out or System.err by a logger.(ü…±Íøÿÿÿÿ8¶±Õõ”.
+V
+squid:S106l"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+[
+squid:S106k"9Replace this use of System.out or System.err by a logger.(õ—‹¡üÿÿÿÿ8¶±Õõ”.
+V
+squid:S106w"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+isquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(é»¡î8¶±Õõ”.
+tsquid:S1192m"VDefine a constant instead of duplicating this literal "COMPANY_CONTACT_TERMS" 4 times.(–’ÆŠ8¶±Õõ”.
+Gsquid:S1068")Remove this unused "index" private field.(ßìÔ¢8¶±Õõ”.
+[
+squid:S106d"9Replace this use of System.out or System.err by a logger.(½Áó™úÿÿÿÿ8¶±Õõ”.
+\
+squid:S106ˆ"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ8¶±Õõ”.
+nsquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(×öñúÿÿÿÿ8¶±Õõ”.
+V
+squid:S106}"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+\
+squid:S106Œ"9Replace this use of System.out or System.err by a logger.(ÓÍä¨ÿÿÿÿÿ8¶±Õõ”.
+W
+squid:S106‚"9Replace this use of System.out or System.err by a logger.(³ë…¨8¶±Õõ”.
+isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(½‘Ñ³8¶±Õõ”.
+V
+squid:S106/"9Replace this use of System.out or System.err by a logger.(ã³øÎ8¶±Õõ”.
+V
+squid:S106n"9Replace this use of System.out or System.err by a logger.(³ë…¨8¶±Õõ”.
+Ksquid:S1068"(Remove this unused "type" private field.(äÊÖ·úÿÿÿÿ8¶±Õõ”.
+[
+squid:S106-"9Replace this use of System.out or System.err by a logger.(ü…±Íøÿÿÿÿ8¶±Õõ”.
+psquid:S00117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰”€8¶±Õõ”.
+V
+squid:S106q"9Replace this use of System.out or System.err by a logger.(³ë…¨8¶±Õõ”.
+\
+squid:S106"9Replace this use of System.out or System.err by a logger.(ç‘ë®üÿÿÿÿ8¶±Õõ”.
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÆÀûı8¶±Õõ”.
+V
+squid:S106‹"9Replace this use of System.out or System.err by a logger.(ãÇëH8¶±Õõ”.

@@ -1,0 +1,21 @@
+amazon:
+  dynamodb:
+    endpoint: dynamodb.us-east-1.amazonaws.com
+  aws:
+    accesskey:
+    secretkey:
+  region: us-east-1
+
+
+server:
+  port: 8088
+
+
+#spring:
+#  data:
+#    dynamodb:
+#      entity2ddl:
+#        auto: none
+#        gsiProjectionType: ALL
+#        readCapacity: 1
+#        writeCapacity: 1

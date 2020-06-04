@@ -1,0 +1,18 @@
+{
+  "name": "client-lambda",
+  "version": "1.0.0",
+  "description": "lambda function to sync dynamo db and elastic search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node test.js"
+  },
+  "author": "himanshu saini",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.689.0",
+    "axios": "^0.19.2",
+    "dynamo-converters": "^3.1.11",
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "script" : {
+        "source": "for (int i = 0; i < ctx._source.divisions.length; ++i) { if( ctx._source.divisions[i].divisionId == params.divisionId ) { for (int j = 0; j < ctx._source.divisions[i].offices.length; ++j) { if( ctx._source.divisions[i].offices[j].officeId == params.office.officeId ) { ctx._source.divisions[i].offices[j].updatedTime = params.office.updatedTime; ctx._source.divisions[i].offices[j].address = params.office.address } }  } }",
+        "lang": "painless",
+        "params" : {
+            "divisionId": null,
+            "office": null
+        }
+    }
+}

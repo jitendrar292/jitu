@@ -1,0 +1,23 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.cbre.vas.platform.dynamodb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compileOnly 'org.projectlombok:lombok:1.18.2'
+	annotationProcessor "org.projectlombok:lombok:1.18.2"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.744'
+	//compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version: '5.1.0'
+
+}

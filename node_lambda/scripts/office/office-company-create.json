@@ -1,0 +1,9 @@
+{
+    "script" : {
+        "source": "ctx._source.offices.add( params.office )",
+        "lang": "painless",
+        "params" : {
+            "office": null
+        }
+    }
+}

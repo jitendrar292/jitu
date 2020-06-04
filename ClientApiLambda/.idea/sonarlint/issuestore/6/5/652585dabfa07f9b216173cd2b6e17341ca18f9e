@@ -1,0 +1,4 @@
+
+"squid:ClassVariableVisibilityCheck"UMake phoneType a static final constant or non-public and provide accessors if needed.(ΉΆΐψÿÿÿÿ8•€γχ”.
+;squid:S1700"Rename field "phoneType"(ΉΆΐψÿÿÿÿ8•€γχ”.
+Fsquid:S3066"#Lower the visibility of this field.(ΉΆΐψÿÿÿÿ8•€γχ”.

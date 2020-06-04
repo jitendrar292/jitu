@@ -1,0 +1,363 @@
+{
+    "Records": [
+        {
+            "eventID": "dc5cec04e0bf462c07085ccb32f70185",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    }
+                },
+                "NewImage": {
+                    "CompanyName": {
+                        "S": "cbre modified"
+                    },
+                    "IsDivision": {
+                        "N": "0"
+                    },
+                    "SK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "CreatedDate": {
+                        "S": "2020-05-27T09:12:02.343Z"
+                    },
+                    "UpdatedDate": {
+                        "S": "2020-05-27T09:12:02.343Z"
+                    }
+                },
+                "SequenceNumber": "66216800000000031294722132",
+                "SizeBytes": 198,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        },
+        {
+            "eventID": "dc5cec04e0bf462c07085ccb32f70185",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e6"
+                    }
+                },
+                "NewImage": {
+                    "CompanyName": {
+                        "S": "cbre division1 modified"
+                    },
+                    "IsDivision": {
+                        "N": "1"
+                    },
+                    "SK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e6"
+                    },
+                    "CreatedDate": {
+                        "S": "2020-05-27T09:12:02.343Z"
+                    },
+                    "UpdatedDate": {
+                        "S": "2021-05-27T09:12:02.343Z"
+                    }
+                },
+                "SequenceNumber": "66216800000000031294722132",
+                "SizeBytes": 198,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        },
+        {
+            "eventID": "492c594b7eeb23a43c0dc3eb7eb01353",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811#CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    }
+                },
+                "NewImage": {
+                    "IndexId": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "SK": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811#CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "Id": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    }
+                },
+                "SequenceNumber": "66216900000000031294722179",
+                "SizeBytes": 353,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        },
+        {
+            "eventID": "be178b5a4dfe55f4b5b6132a258818f6",
+            "eventName": "INSERT",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9#OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "PK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    }
+                },
+                "NewImage": {
+                    "SK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9#OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "Id": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "PK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    }
+                },
+                "SequenceNumber": "66217000000000031294722183",
+                "SizeBytes": 308,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        },
+        {
+            "eventID": "e5521a8cd6b8b9d9464946cb744fd24c",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "PK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    }
+                },
+                "NewImage": {
+                    "UltimateParentCompanyId": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "AssociatedOfficeId":{
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "DivisionId":{
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e6"
+                    },
+                    "CreatedBy": {
+                        "S": "Nishant@cbre.com"
+                    },
+                    "FirstName": {
+                        "S": "himanshu"
+                    },
+                    "FullName": {
+                        "S": "saini"
+                    },
+                    "CreatedDate": {
+                        "S": "2020-05-30T14:45:30.461Z"
+                    },
+                    "SK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "ChangeDesc": {
+                        "S": "Updated Info"
+                    },
+                    "LastName": {
+                        "S": "shoe"
+                    },
+                    "PK": {
+                        "S": "CONTACT#448f794f-ed50-47ff-9982-40733ef23ed9"
+                    },
+                    "CommunicationChannelDBO": {
+                        "M": {
+                            "Email": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "EmailId": {
+                                                "S": "test@cbre.com"
+                                            },
+                                            "EmailIdUsage": {
+                                                "S": "primary"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "CreatedBy": {
+                                "S": "Nishant@cbre.com"
+                            },
+                            "Address": {
+                                "L": []
+                            },
+                            "Phone": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "PhoneType": {
+                                                "S": "WORK"
+                                            },
+                                            "PhoneNumber": {
+                                                "S": "9920207840"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "CreatedDate": {
+                                "S": "2020-05-30T14:45:30.461Z"
+                            },
+                            "ChangeDesc": {
+                                "S": "Updated Info"
+                            },
+                            "Fax": {
+                                "L": []
+                            }
+                        }
+                    },
+                    "Salutation": {
+                        "S": "Mr"
+                    }
+                },
+                "SequenceNumber": "66217100000000031294722184",
+                "SizeBytes": 616,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        },
+        {
+            "eventID": "f5e04db51b6d9172cc1771df5e0f13cf",
+            "eventName": "MODIFY",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "us-east-1",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1590849930,
+                "Keys": {
+                    "SK": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    }
+                },
+                "NewImage": {
+                    "IndexId": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "UltimateParentCompanyId": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e5"
+                    },
+                    "CreatedBy": {
+                        "S": "Nishant@cbre.com"
+                    },
+                    "CREATED_DATE": {
+                        "S": "2020-05-30T14:45:25.147Z"
+                    },
+                    "StandardizedAddress": {
+                        "S": "saini enclave"
+                    },
+                    "UpdatedDate": {
+                        "S": "2021-05-30T14:45:25.147Z"
+                    },
+                    "SK": {
+                        "S": "OFC#4670e937-c192-45b4-af15-b3ba89654811"
+                    },
+                    "ChangeDesc": {
+                        "S": "Updated Info"
+                    },
+                    "PK": {
+                        "S": "COMP#703ac7d6-010c-4534-a632-3790ff84f7e6"
+                    },
+                    "CommunicationChannel": {
+                        "M": {
+                            "Email": {
+                                "L": []
+                            },
+                            "CreatedBy": {
+                                "S": "Nishant@cbre.com"
+                            },
+                            "Address": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "StandardAddress": {
+                                                "S": "Novus Ct, Grand Prairie, TX, 75052, USA"
+                                            },
+                                            "AddressLine1": {
+                                                "S": "saini encl modified"
+                                            },
+                                            "State": {
+                                                "S": "delhi "
+                                            },
+                                            "PostalCode": {
+                                                "S": "11009122"
+                                            },
+                                            "City": {
+                                                "S": "delhi 1"
+                                            },
+                                            "AddressType": {
+                                                "S": "PRIMARY"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "Phone": {
+                                "L": []
+                            },
+                            "CreatedDate": {
+                                "S": "2020-05-30T14:45:25.147Z"
+                            },
+                            "ChangeDesc": {
+                                "S": "Updated Info"
+                            },
+                            "Fax": {
+                                "L": []
+                            }
+                        }
+                    }
+                },
+                "SequenceNumber": "66217200000000031294722185",
+                "SizeBytes": 705,
+                "StreamViewType": "NEW_AND_OLD_IMAGES"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/Company/stream/2020-05-30T13:37:57.545"
+        }
+    ]
+}

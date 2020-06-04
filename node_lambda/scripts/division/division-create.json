@@ -1,0 +1,9 @@
+{
+    "script" : {
+        "source": "ctx._source.divisions.add( params.division )",
+        "lang": "painless",
+        "params" : {
+            "division": null
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "script" : {
+        "source": "for (int i = 0; i < ctx._source.divisions.length; ++i) { if( ctx._source.divisions[i].divisionId == params.divisionId ) { ctx._source.divisions[i].offices.add( params.office )  } }",
+        "lang": "painless",
+        "params" : {
+            "divisionId": null,
+            "office": null
+        }
+    }
+}

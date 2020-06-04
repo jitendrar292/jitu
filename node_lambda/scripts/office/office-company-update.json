@@ -1,0 +1,10 @@
+{
+    "script": {
+      "source": "for (int i = 0; i < ctx._source.offices.length; ++i) { if( ctx._source.offices[i].officeId == params.officeId) { ctx._source.offices[i].updatedTime = params.office.updatedTime;ctx._source.offices[i].address = params.office.address}}",
+      "lang": "painless",
+      "params": {
+        "office": null,
+        "officeId": null
+      }
+    }
+  }

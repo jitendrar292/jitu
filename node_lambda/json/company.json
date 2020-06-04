@@ -1,0 +1,1199 @@
+{
+    "Records": [
+      {
+        "eventID": "cb80cd1a9546bb485881cc816a79afec",
+        "eventName": "INSERT",
+        "eventVersion": "1.1",
+        "eventSource": "aws:dynamodb",
+        "awsRegion": "us-east-1",
+        "dynamodb": {
+          "ApproximateCreationDateTime": 1586777546,
+          "Keys": {
+            "SK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            },
+            "PK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            }
+          },
+          "NewImage": {
+            "COMMUNICATION_CHANNEL": {
+              "M": {
+                "ADDRESS": {
+                  "L": [
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "WORK"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "PRIMARY"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "MAILING"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "SOLDTO"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "BILLTO"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "PERMANENT"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "FOREIGN"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "ADDRESS_TYPE": {
+                          "S": "C_O"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "PHONE": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "HOME"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "MOBILE"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "WORK"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "AUDIT_INFO": {
+                  "M": {
+                    "CREATED_BY": {
+                      "S": "Raman Jha"
+                    },
+                    "CHANGE_DESC": {
+                      "S": "Testing Desc"
+                    },
+                    "UPDATED_BY": {
+                      "S": "Raman Jha"
+                    }
+                  }
+                },
+                "EMAIL": {
+                  "L": [
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "FAX": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "HOME"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "MOBILE"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "PHONE_TYPE": {
+                          "S": "WORK"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "SK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            },
+            "AUDIT_INFO": {
+              "M": {
+                "CREATED_BY": {
+                  "S": "Raman Jha"
+                },
+                "CHANGE_DESC": {
+                  "S": "Testing Desc"
+                },
+                "UPDATED_BY": {
+                  "S": "Raman Jha"
+                }
+              }
+            },
+            "PK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            },
+            "IS_ACTIVE": {
+              "N": "1"
+            }
+          },
+          "SequenceNumber": "31225600000000018290866814",
+          "SizeBytes": 2749,
+          "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/company/stream/2020-04-13T10:59:32.333"
+      },
+      {
+        "eventID": "d7bb922f6d485692657e4ffe6938d6a3",
+        "eventName": "INSERT",
+        "eventVersion": "1.1",
+        "eventSource": "aws:dynamodb",
+        "awsRegion": "us-east-1",
+        "dynamodb": {
+          "ApproximateCreationDateTime": 1586844144,
+          "Keys": {
+            "SK": {
+              "S": "OFFICE7fd4b98c-f5ce-4201-a0e7-f3ec9eb3432e"
+            },
+            "PK": {
+              "S": "CONTACTb364f1ef-41e6-4ae4-8da4-80b09c3700cb"
+            }
+          },
+          "NewImage": {
+            "COMMUNICATION_CHANNEL": {
+              "M": {
+                "ADDRESS": {
+                  "L": [
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "PHONE": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "AUDIT_INFO": {
+                  "M": {
+                    "CREATED_BY": {
+                      "S": "Raman Jha"
+                    },
+                    "CHANGE_DESC": {
+                      "S": "Testing Desc"
+                    },
+                    "UPDATED_BY": {
+                      "S": "Raman Jha"
+                    }
+                  }
+                },
+                "FAX": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "EMAIL": {
+                  "L": [
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "SNAME": {
+              "S": "Jitendra Rawat"
+            },
+            "IS_ACTIVE": {
+              "N": "1"
+            },
+            "LAST_NAME": {
+              "S": "Rawat"
+            },
+            "FIRST_NAME": {
+              "S": "Jitendra"
+            },
+            "NOTES": {
+              "L": [
+                {
+                  "S": "param1"
+                },
+                {
+                  "S": "param2"
+                }
+              ]
+            },
+            "SALUTATION": {
+              "S": "salutation"
+            },
+            "IS_PENDING_VERIFICATION": {
+              "N": "0"
+            },
+            "FULL_NAME": {
+              "S": "Jitendra Rawat"
+            },
+            "SK": {
+              "S": "OFFICE7fd4b98c-f5ce-4201-a0e7-f3ec9eb3432e"
+            },
+            "TITLE": {
+              "S": "Mr"
+            },
+            "AUDIT_INFO": {
+              "M": {
+                "CREATED_BY": {
+                  "S": "Raman Jha"
+                },
+                "CHANGE_DESC": {
+                  "S": "Testing Desc"
+                },
+                "UPDATED_BY": {
+                  "S": "Raman Jha"
+                }
+              }
+            },
+            "PK": {
+              "S": "CONTACTb364f1ef-41e6-4ae4-8da4-80b09c3700cb"
+            }
+          },
+          "SequenceNumber": "34321600000000034395829966",
+          "SizeBytes": 2647,
+          "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/company/stream/2020-04-13T10:59:32.333"
+      },
+      {
+        "eventID": "6691757718de24552bb49cc0cb3b9401",
+        "eventName": "INSERT",
+        "eventVersion": "1.1",
+        "eventSource": "aws:dynamodb",
+        "awsRegion": "us-east-1",
+        "dynamodb": {
+          "ApproximateCreationDateTime": 1586844139,
+          "Keys": {
+            "SK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            },
+            "PK": {
+              "S": "OFFICE7fd4b98c-f5ce-4201-a0e7-f3ec9eb3432e"
+            }
+          },
+          "NewImage": {
+            "OTHER_CATEGORY": {
+              "S": "NA"
+            },
+            "COMMUNICATION_CHANNEL": {
+              "M": {
+                "ADDRESS": {
+                  "L": [
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "COUNTRY": {
+                          "S": "United States"
+                        },
+                        "ADDRESS_LINE_1": {
+                          "S": "4333 Edgewood Road NE"
+                        },
+                        "CITY": {
+                          "S": "Cedar Rapid"
+                        },
+                        "FORMATTED_ADDRESS": {
+                          "S": "4333 Edgewood Road NE  Cedar Rapids, IA 52499  United States"
+                        },
+                        "STATE": {
+                          "S": "IA"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "PHONE": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "AUDIT_INFO": {
+                  "M": {
+                    "CREATED_BY": {
+                      "S": "Raman Jha"
+                    },
+                    "CHANGE_DESC": {
+                      "S": "Testing Desc"
+                    },
+                    "UPDATED_BY": {
+                      "S": "Raman Jha"
+                    }
+                  }
+                },
+                "FAX": {
+                  "L": [
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "FULL_PHONE_NUMBER": {
+                          "S": "+91 011 25318448"
+                        },
+                        "PHONE_NUMBER_EXT": {
+                          "S": "+91"
+                        },
+                        "PHONE_NUMBER": {
+                          "S": "25316448"
+                        },
+                        "LOCAL_AREA_CODE": {
+                          "S": "011"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "EMAIL": {
+                  "L": [
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    },
+                    {
+                      "M": {
+                        "EMAIL_USAGE": {
+                          "S": "testing"
+                        },
+                        "EMAIL_ID": {
+                          "S": "raman.jha@cbre.com"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "IS_PENDING_VERIFICATION": {
+              "N": "0"
+            },
+            "COMPANY_CODE": {
+              "S": "HIMANSHU"
+            },
+            "SK": {
+              "S": "COMPANYff9fdb67-58df-4aa9-9a82-2b1ef8763d1e"
+            },
+            "SNAME": {
+              "S": "TATA MOTORS 1"
+            },
+            "IS_PRIMARY_OFFICE": {
+              "N": "1"
+            },
+            "OFFICE_DESC": {
+              "S": "TATA MOTORS 1 DESC"
+            },
+            "AUDIT_INFO": {
+              "M": {
+                "CREATED_BY": {
+                  "S": "Raman Jha"
+                },
+                "CHANGE_DESC": {
+                  "S": "Testing Desc"
+                },
+                "UPDATED_BY": {
+                  "S": "Raman Jha"
+                }
+              }
+            },
+            "PK": {
+              "S": "OFFICE7fd4b98c-f5ce-4201-a0e7-f3ec9eb3432e"
+            },
+            "IS_ACTIVE": {
+              "N": "1"
+            },
+            "OFFICE_NAME": {
+              "S": "TATA MOTORS 1"
+            }
+          },
+          "SequenceNumber": "34321100000000034395825473",
+          "SizeBytes": 2644,
+          "StreamViewType": "NEW_AND_OLD_IMAGES"
+        },
+        "eventSourceARN": "arn:aws:dynamodb:us-east-1:942225968741:table/company/stream/2020-04-13T10:59:32.333"
+      }
+    ]
+  }

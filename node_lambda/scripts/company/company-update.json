@@ -1,0 +1,10 @@
+{
+    "script" : {
+        "source": "ctx._source.companyName = params.companyName; ctx._source.updatedTime = params.updatedTime",
+        "lang": "painless",
+        "params" : {
+            "companyName": null,
+            "updatedTime": null
+        }
+    }
+}

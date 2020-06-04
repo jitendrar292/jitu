@@ -1,0 +1,12 @@
+const REGION = 'us-east-1'
+const ACCESS_KEY = 'AKIA5WYILJZSWLEXCGOY'
+const SECRET_ACCESS_KEY = '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'
+const SNS_ARN = 'arn:aws:sns:us-east-1:942225968741:dynamo'
+
+module.exports = {
+
+    REGION: REGION,
+    ACCESS_KEY: ACCESS_KEY,
+    SECRET_ACCESS_KEY: SECRET_ACCESS_KEY,
+    SNS_ARN: SNS_ARN
+}

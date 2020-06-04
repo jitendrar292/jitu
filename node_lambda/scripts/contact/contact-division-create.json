@@ -1,0 +1,9 @@
+{
+    "script" : {
+        "source": "for (int i = 0; i < ctx._source.divisions.length; ++i) { if(ctx._source.divisions[i].divisionId == params.contact.divisionId ) { for (int j = 0; j < ctx._source.divisions[i].offices.length; ++j) { if(ctx._source.divisions[i].offices[j].officeId == params.contact.officeId ) { ctx._source.divisions[i].offices[j].contacts.add( params.contact ) } } }}",
+        "lang": "painless",
+        "params" : {
+            "contact": null
+        }
+    }
+}
