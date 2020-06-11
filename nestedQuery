@@ -1,0 +1,10 @@
+   queryBuilder.must(new BoolQueryBuilder()
+        .should(QueryBuilders.wildcardQuery("COMPANY_NAME", appendAsteriskWildCard(search)))
+        .should(QueryBuilders.nestedQuery("divisions",
+            QueryBuilders.boolQuery().must(QueryBuilders.wildcardQuery("divisions.divisionName", appendAsteriskWildCard(search))), ScoreMode.None)
+            .innerHit(new InnerHitBuilder().setName("division")
+                .addSort(SortBuilders.fieldSort("divisions.createdTime").order(SortOrder.ASC)))))
+        .should(QueryBuilders.nestedQuery("divisions.offices",
+            QueryBuilders.boolQuery().must(QueryBuilders.wildcardQuery("divisions.offices.address.addressLine1", appendAsteriskWildCard(search))), ScoreMode.None)
+            .innerHit(new InnerHitBuilder().setName("office")
+                .addSort(SortBuilders.fieldSort("divisions.offices.createdTime").order(SortOrder.ASC))));
