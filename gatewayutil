@@ -1,0 +1,156 @@
+package com.cbre.vas.platform.client.ol.util;
+
+import com.cbre.vas.platform.client.ol.exception.ClientDuplicateException;
+import com.cbre.vas.platform.client.ol.service.ApiGatewayService;
+import com.cbre.vas.platform.client.ol.model.aws.APIGatewayToken;
+import com.cbre.vas.platform.corecommons.exception.ClientErrorException;
+import com.cbre.vas.platform.corecommons.exception.InternalServerError;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.URL;
+import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+@Slf4j
+public class APIGatewayUtils {
+
+  private final RestTemplate restTemplate;
+  private ApiGatewayService apiGatewayService;
+  private static final String ERROR_MESSAGE = "HTTP {} error while calling {} {}: \n {}";
+
+  @Autowired
+  public APIGatewayUtils(RestTemplate restTemplate, ApiGatewayService apiGatewayService) {
+    this.restTemplate = restTemplate;
+    this.apiGatewayService = apiGatewayService;
+  }
+
+  public <V, S> V callAPIGatewayService(HttpMethod httpMethod, String url, HttpHeaders headers, S body, Class<V> responseClass) {
+
+    ResponseEntity<V> responseEntity = getResponse(httpMethod, url, headers, body, responseClass);
+    return responseEntity!=null?responseEntity.getBody():null;
+  }
+
+  private <V, S> ResponseEntity getResponse(HttpMethod httpMethod, String url, HttpHeaders headers, S body, Class<V> responseClass) {
+
+    ResponseEntity<V> responseEntity = null;
+    setApiGatewayToken(headers);
+    boolean shouldRetry = false;
+    boolean wasTokenRefreshPerformed = false;
+
+    do {
+      try {
+        HttpEntity<S> request = new HttpEntity<>(body, headers);
+        String sanitizedUrl = sanitizeURL(url);
+        if(!"".equals(sanitizedUrl)) {
+          responseEntity = restTemplate.exchange(sanitizedUrl, httpMethod, request, responseClass);
+        }
+        else {
+          throw new InternalServerError(ClientConstants.INVALID_URL_STRING.getValue());
+        }
+
+        shouldRetry = false;
+      } catch (HttpClientErrorException clientErrorException) {
+        handleHttpClientErrorException(clientErrorException, wasTokenRefreshPerformed, httpMethod,
+            url, headers);
+        shouldRetry = true;
+        wasTokenRefreshPerformed = true;
+      } catch (HttpServerErrorException serverErrorException) {
+        checkHttpServerErrorException(httpMethod, url, serverErrorException);
+      }
+
+    } while (shouldRetry);
+
+    return responseEntity;
+  }
+
+  private void setApiGatewayToken(HttpHeaders headers) {
+
+    APIGatewayToken apiGatewayToken = apiGatewayService.retrieveAPIGatewayToken();
+    headers.set(HttpHeaders.AUTHORIZATION, apiGatewayToken.getBearerToken());
+  }
+
+  private String sanitizeURL(String url) {
+
+    String sanitizedUrl = "";
+    URL urlFromString = extractURLFromAString(url);
+    InetAddress inetAddress = getInetAddressFromUrl(urlFromString);
+    if (!inetAddress.isAnyLocalAddress() || !inetAddress.isLoopbackAddress() || !inetAddress.isLinkLocalAddress()) {
+      sanitizedUrl = url;
+    }
+
+    return sanitizedUrl;
+  }
+
+  private URL extractURLFromAString(String url) {
+
+    URL urlFromString = null;
+    try {
+      urlFromString = new URL(url);
+    } catch (Exception invalidURLException) {
+      log.error(ERROR_MESSAGE, invalidURLException.getStackTrace(), url, invalidURLException.getMessage());
+      throw new InternalServerError("Pass a valid api URL");
+    }
+    return urlFromString;
+  }
+
+  private InetAddress getInetAddressFromUrl(URL url) {
+
+    InetAddress inetAddress = null;
+    try {
+      inetAddress = InetAddress.getByName(url.getHost());
+    } catch (Exception invalidInetAddressException) {
+      log.error(ERROR_MESSAGE, invalidInetAddressException.getStackTrace(), url, invalidInetAddressException.getMessage());
+      throw new InternalServerError("Pass a valid api URL");
+    }
+    return inetAddress;
+  }
+
+  private void handleHttpClientErrorException(HttpClientErrorException clientErrorException, boolean wasTokenRefreshPerformed, HttpMethod httpMethod, String url, HttpHeaders headers) {
+
+    boolean isRequestUnauthorized = HttpStatus.UNAUTHORIZED.equals(clientErrorException.getStatusCode());
+    if(HttpStatus.CONFLICT.equals(clientErrorException.getStatusCode())){
+      log.error(ERROR_MESSAGE, clientErrorException.getRawStatusCode(), httpMethod.toString(), url, clientErrorException.getMessage());
+      ObjectMapper mapper = new ObjectMapper();
+      try {
+        String message = (String) mapper.readValue(clientErrorException.getResponseBodyAsString(), Map.class).get("message");
+        throw new ClientDuplicateException(message);
+      } catch (IOException e) {
+        log.error("Error mapping message due to :: {}", e.getMessage());
+        throw new InternalServerError("Internal server error fetching Client Search");
+      }
+    }
+
+    if (!isRequestUnauthorized || wasTokenRefreshPerformed) {
+      log.error(ERROR_MESSAGE, clientErrorException.getRawStatusCode(), httpMethod.toString(), url, clientErrorException.getMessage());
+      throw new ClientErrorException(clientErrorException.getStatusCode(), clientErrorException.getResponseBodyAsString());
+    }
+    String authToken = apiGatewayService.refreshAPIGatewayToken().getBearerToken();
+    headers.set(HttpHeaders.AUTHORIZATION, authToken);
+  }
+
+  private void checkHttpServerErrorException(HttpMethod httpMethod, String url, HttpServerErrorException serverErrorException) {
+    log.error(ERROR_MESSAGE, serverErrorException.getRawStatusCode(), httpMethod.toString(), url, serverErrorException.getMessage());
+    throw new InternalServerError(serverErrorException.getMessage());
+  }
+
+  private void checkHttpCLientException(HttpMethod httpMethod, String url, boolean wasTokenRefreshPerformed, HttpClientErrorException clientErrorException) {
+
+    boolean isRequestUnauthorized = HttpStatus.UNAUTHORIZED.equals(clientErrorException.getStatusCode());
+    if (!isRequestUnauthorized || wasTokenRefreshPerformed) {
+      log.error(ClientConstants.ERROR_MESSAGE.getValue(), clientErrorException.getRawStatusCode(), httpMethod.toString(), url, clientErrorException.getMessage());
+      throw new ClientErrorException(clientErrorException.getStatusCode(), clientErrorException.getResponseBodyAsString());
+    }
+  }
+}
