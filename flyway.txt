@@ -1,0 +1,3 @@
+Flyway configuration for db migration
+
+https://medium.com/@viveka_singh/spring-boot-execute-flyway-migrations-ahead-of-service-deployment-340d0618ee3b
