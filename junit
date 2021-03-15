@@ -2,7 +2,7 @@
     public void init_mocks() {
         MockitoAnnotations.initMocks(this);
         razorpayPaymentTransactionService = new RazorpayPaymentTransactionServiceImpl(restService, tokensRepository, transactionRepository);
-        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "razorpayUri", "https://api.razorpay.com/v1/methods");
-        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "apiKey", "rzp_test_kEVtCVFWAjUQPG");
-        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "apiPassword", "ZBeLvpnS3JxSbfdCDNJIQW5e");
+        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "payUri", "sfewfeewfew");
+        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "apiKey", "241253345");
+        ReflectionTestUtils.setField(razorpayPaymentTransactionService, "apiPassword", "dskfgjskfjdks");
     }
