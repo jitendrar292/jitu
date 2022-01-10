@@ -7,8 +7,8 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="title" type="xs:string" />
-              <xs:element minOccurs="0" name="note" type="xs:string" />
-              <xs:element name="quantity" type="xs:unsignedByte" />
+              <xs:element minOccurs="1" name="note" type="xs:string" />
+              <xs:element name="quantity" type="xs:integer" />
               <xs:element name="price" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
