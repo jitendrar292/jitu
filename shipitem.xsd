@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="shiporder">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element maxOccurs="1" name="item">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="title" type="xs:string" />
-              <xs:element minOccurs="1" name="note" type="xs:string" />
-              <xs:element name="quantity" type="xs:integer" />
-              <xs:element name="price" type="xs:decimal" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+   <xs:element name="shiporder">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="item">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element type="xs:string" name="title" />
+                     <xs:element type="xs:string" name="note" />
+                     <xs:element type="xs:byte" name="quantity" />
+                     <xs:element type="xs:float" name="price" />
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema
