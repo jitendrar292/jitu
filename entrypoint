@@ -1,0 +1,2 @@
+#!/bin/bash
+java  -jar collector.jar --spring.config.additional-location=/opt/streams/config.properties
