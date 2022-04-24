@@ -1,0 +1,27 @@
+//Just call this method for consuming from new topic
+    public void dynamicConsumer(String dynamicTopic)
+    {
+        Properties consumerProps = consumerProps(bootstrapServers, "my-group", "false");
+        DefaultKafkaConsumerFactory<String, String> cf = new DefaultKafkaConsumerFactory(consumerProps);
+        ContainerProperties containerProperties = new ContainerProperties(dynamicTopic);
+        KafkaMessageListenerContainer container = new KafkaMessageListenerContainer<>(cf, containerProperties);
+        final BlockingQueue<ConsumerRecord<String, String>> records = new LinkedBlockingQueue<>();
+        container.setupMessageListener((MessageListener<String, String>) record -> {
+            log.info("Message received: " + record.value());
+            records.add(record);
+        });
+        container.start();
+    }
+
+
+    public static Properties consumerProps(String brokersCommaSep, String group, String autoCommit) {
+        Properties properties = new Properties();
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokersCommaSep);
+        properties.put(ConsumerConfig.GROUP_ID_CONFIG, group);
+        properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, autoCommit);
+        properties.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "10");
+        properties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 60000);
+        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        return properties;
+    }
