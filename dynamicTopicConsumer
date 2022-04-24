@@ -1,4 +1,29 @@
-//Just call this method for consuming from new topic
+import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.listener.KafkaMessageListenerContainer;
+import org.springframework.kafka.listener.MessageListener;
+import org.springframework.stereotype.Service;
+
+import java.util.Properties;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+@Service
+@Slf4j
+public class KafkaConsumer {
+
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String bootstrapServers;
+
+    /**
+     * Just call this method for consuming from new topic
+     * @param dynamicTopic
+     */
     public void dynamicConsumer(String dynamicTopic)
     {
         Properties consumerProps = consumerProps(bootstrapServers, "my-group", "false");
@@ -14,6 +39,13 @@
     }
 
 
+    /**
+     * 
+     * @param brokersCommaSep
+     * @param group
+     * @param autoCommit
+     * @return
+     */
     public static Properties consumerProps(String brokersCommaSep, String group, String autoCommit) {
         Properties properties = new Properties();
         properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokersCommaSep);
@@ -25,3 +57,6 @@
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         return properties;
     }
+
+
+}
