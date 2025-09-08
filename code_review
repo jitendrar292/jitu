@@ -1,0 +1,64 @@
+Code review
+✅ Code Quality & Readability
+
+ Are variable, function, and class names clear and descriptive?
+
+ Is the code free of unnecessary complexity or duplication?
+
+ Is the logic easy to follow without excessive comments?
+
+ Does it follow the team’s style guide (formatting, naming, lint rules)?
+
+🧪 Testing
+
+ Are there unit or integration tests for new functionality?
+
+ Do tests cover both success and failure scenarios?
+
+ Are edge cases (empty input, null, errors) tested?
+
+ Do tests run and pass locally or in CI?
+
+⚙️ Functionality & Correctness
+
+ Does the code do what the PR description says?
+
+ Does it handle invalid input gracefully?
+
+ Are dependencies or third-party libraries justified and safe?
+
+🔒 Security
+
+ Is user input validated and sanitized?
+
+ Are database queries parameterized (no SQL injection risks)?
+
+ Are secrets or API keys avoided in the codebase?
+
+ Is sensitive data handled safely (encryption, masking, etc.)?
+
+🚀 Performance
+
+ Any obvious bottlenecks (e.g., queries inside loops)?
+
+ Is memory usage reasonable?
+
+ Does it scale with larger datasets or higher traffic?
+
+📄 Documentation & Communication
+
+ Is the PR description clear and complete?
+
+ Are code comments used only where necessary (not to explain bad code)?
+
+ Is there documentation (README, inline docs) for new or complex features?
+
+ Are breaking changes clearly mentioned?
+
+✅ Review Decision
+
+ Approve if everything looks good
+
+ Request changes if issues are blocking
+
+ Leave comments/questions if something needs clarification
