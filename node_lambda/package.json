@@ -10,7 +10,7 @@
   "author": "himanshu saini",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.689.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.19.2",
     "dynamo-converters": "^3.1.11",
     "express": "^4.17.1"
