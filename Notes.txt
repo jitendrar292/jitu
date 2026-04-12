@@ -1,0 +1,35 @@
+Not every backend problem should be solved at the framework level.
+
+Senior engineers know when to stop hacking the framework and move the problem to where it belongs.
+
+5 common mistakes:
+
+1. Scheduled jobs on every pod
+→ @Scheduled + 5 replicas = job runs 5 times. Duplicate emails. Duplicate charges.
+→ Fix: ShedLock for coordination, OR move scheduling to Kubernetes CronJob.
+
+2. Large file uploads in Spring Boot
+→ @RequestParam MultipartFile for 10GB files. Pods OOMKilled.
+→ Fix: Pre-signed URLs. Client uploads directly to S3/GCS/MinIO. Your server only authorizes.
+
+3. Search using SQL LIKE
+→ WHERE name LIKE '%phone%'. Works in dev. 10M rows in prod = 5-second queries. DB falls over.
+→ Fix: Elasticsearch, OpenSearch, or Postgres full-text search. Transactional DBs weren't built for search.
+
+4. Background jobs on REST APIs
+→ Controller processes a 30-second report synchronously. Timeouts. Duplicate retries. Thread pool exhausted.
+→ Fix: Publish to Kafka/RabbitMQ/SQS. Return 202 Accepted. Worker handles it async.
+
+5. Rate limiting in controllers
+→ HashMap counter on 5 pods = user gets 5x the rate limit. Hacker wins.
+→ Fix: Move to API Gateway. Kong, Nginx, AWS API Gateway. Enforced before the request reaches your app.
+
+The lesson:
+
+When you're hacking the framework to solve a problem — pause. Ask: is this the right LEVEL to solve this?
+
+Your framework is for business logic. Not for solving every infrastructure problem inside your application code.
+
+What's one career lesson you've learned the hard way? Drop it in the comments 👇
+
+#backend
