@@ -1,0 +1,263 @@
+How Large Language Models Work (AI/LLM)
+Introduction
+Since 2023, Large Language Models (LLMs) like ChatGPT (Generative Pre-training Transformer) from OpenAI have gained significant popularity. These models are the result of years of AI research, with advancements in deep learning and natural language processing. But how do they work, and what makes them so powerful?
+
+Core Concepts
+Before diving into the technical details, let’s break down a few key concepts in simple terms:
+
+Tokens: Small pieces of text that the model processes. These can be whole words ("hello") or parts of words ("re-" in "replay"), or even symbols such as exclamation marks ("!"). You can experiment with tokens and see how they work on HuggingFace's Tokenizer Playground.
+Embeddings: Numbers that represent tokens in a way that captures their meaning. Think of them as coordinates on a map: words with similar meanings end up closer together. For example, in an embedding space, "username" and "password" would be close to each other, while "username" and "grass" would be far apart. This helps the model understand relationships between words.
+Self-Attention: A way for the model to figure out which words in a sentence matter most. For example, in "The cat sat on the mat, and it was comfortable" self-attention helps the model understand that "it" refers to "the cat".
+Context Window: The amount of text a model can consider at once when making predictions. For example, GPT-2 has a context window of about 1024 tokens (around 750 words), meaning it can "remember" that many words at a time. Newer models have much larger context windows, allowing them to process longer passages.
+Historic Evolution of LLMs
+These models don't come out of nowhere and are built upon years of research:
+
+1967 - ELIZA: One of the first chatbots, ELIZA, used simple pattern matching to simulate human-like conversations.
+1997 - LSTM: Long Short-Term Memory (LSTM) networks improved how models remembered information over long sequences, which improved neural networks to process bigger amounts of data.
+2010 - Stanford CoreNLP: A powerful natural language processing (NLP) toolkit that provided tools for analyzing text, including sentiment analysis and named entity recognition.
+2011 - Google Brain: Google Brain pioneered large-scale deep learning, which automatically learns patterns from large amounts of data, leading to improvements in NLP and other AI applications.
+2017 - Google Transformer Architecture: Introduced in the paper Attention Is All You Need, the Transformer model replaced recurrent architectures with self-attention, making NLP models faster and more effective. This is the key breakthrough behind modern LLMs.
+2020 - OpenAI GPT-3: GPT-3 demonstrated the power of large-scale Transformers, generating human-like text with 175 billion parameters and setting new standards for NLP.
+How LLMs work
+A large language model is a model that performs text prediction. It assigns probabilities to words or tokens based on context and generates the next word iteratively.
+
+llm-flow
+
+This flowchart shows the process of an LLM to complete a sentence:
+
+Input Sentence: The process starts with the system receiving an initial sentence as input.
+Probability Calculation: The system calculates probabilities to determine the most likely next words.
+Possible Next Words: Based on the probabilities, the system generates a list of possible next words that could follow in the sentence.
+Word Selection: From the list of possible next words, the system selects the most suitable word to complete the sentence.
+Updated Sentence: The selected word is added to the sentence, resulting in an updated sentence. This step connects back to the probability calculation, the process can repeat for continuous updates until a stopping criterion is met, at which point no more words are added, and the sentence is finalized.
+Example
+Let's look at an example. Suppose we have the following incomplete sentence:
+
+The color blue is often associated with...
+
+Based on context, the model assigns probabilities to possible next words:
+
+water → 30%
+sadness → 25%
+calm → 20%
+peace → 10%
+trust → 6%
+the sky → 5%
+The iterative process starts, the model processes the expanded sentence and predicts the next word:
+
+The color blue is often associated with water...
+
+It assigns new probabilities:
+
+and → 30%
+because → 20%
+, which → 15%
+in nature → 10%
+and the sky → 8%
+as well as → 7%
+If the model selects "and" the sentence may continue as:
+
+The color blue is often associated with water and...
+
+This iterative process continues, with the model generating one word (or token) at a time, ensuring coherence based on prior context.
+
+At this point, the model has generated several tokens, but the process doesn't go on forever. It stops when one of the following conditions is met:
+
+The model reaches a predefined token, like a period (.), exclamation mark (!), or question mark (?), marking the end of the sentence.
+The model reaches a predefined sentence length or token count, which is set during training or input by the user.
+A special "stop token" is triggered, depending on the system's design.
+For example, if the model reaches the period and generates:
+
+The color blue is often associated with water and sadness.
+
+It may stop there because the model has generated a coherent sentence that meets the stopping condition (a period).
+
+How LLMs are trained
+LLMs are trained using vast amounts of data from sources like the internet, books, websites, articles, and other publicly available text.
+
+For example, GPT-3 has been trained on a large variety of data, including the datasets:
+
+Common Crawl: a web archive with petabytes of data collected since 2008. It contains a wide range of publicly available content, but it may also include copyrighted material. In the US, this data is often used under fair use laws. Researchers in other countries may use methods like changing the order of sentences or referring to the Common Crawl dataset to work within their copyright laws.
+WebText2: a dataset created by scraping reddit, a popular internet forum. It contained all outbound links from Reddit which received at least 3 karma. The original WebText dataset contains the text subset of these 45 million links.
+Books1 and Books2: In the Language Models are Few-Shot Learners paper, these datasets are described only as "Two internet-based books corpora". The specific contents or sources of these book datasets are not publicly disclosed.
+Wikipedia: a free online encyclopedia that is open for everybody's contribution in a curated manner.
+
+Expand table view 1
+Dataset	Quantity (tokens)	Weight in training mix	Epochs (300B tokens)
+Common Crawl (filtered)	410 billion	60%	0.44
+WebText2	19 billion	22%	2.9
+Books1	12 billion	8%	1.9
+Books2	55 billion	8%	0.43
+Wikipedia	3 billion	3%	3.4
+This data is processed in the pre-training phase.
+
+Pre-training
+Some example datasets that are compiled by scraping the internet are Common Crawl, FineWeb. These datasets go through a flow of filtering to make them useful to train on.
+
+For FineWeb, the process includes:
+
+URL Filtering: Removes irrelevant low-quality, denylisted websites from the dataset.
+Text Extraction: Extracts meaningful text from web pages while discarding unnecessary HTML elements like ads or navigation bars.
+Language Filtering: Keeps only content in the desired language(s) to maintain dataset quality.
+Gopher Filtering: Applies additional quality checks to filter out harmful or misleading content.
+Deduplication: Eliminates duplicate text to prevent redundancy in training data.
+C4 Filters: Implements cleaning techniques from the C4 dataset, known for improving data quality.
+Custom Filters: Applies domain-specific rules to refine the dataset further.
+PII Removal: Removes personally identifiable information (PII).
+Now that the raw data has been processed, the dataset is ready for training the neural network.
+
+Tokenization
+Once the raw data has been filtered and cleaned, it needs to be tokenized before it can be used for training.
+
+Tokenization is the process of converting text into smaller units called tokens, which are numerical representations that a model can process. These tokens can be words, subwords, or even individual characters, depending on the tokenizer used.
+
+For example, consider the sentence: "Welcome back!". Using the cl100k_base tokenizer (which GPT-4 also uses), this sentence has a token count of 3 in context. Token counts can vary widely based on the input text, sometimes a token represents a full word, a single character, or even just a punctuation mark.
+
+Each of these elements is then converted into a sequence of token IDs (numerical values representing the text):
+
+14262, 1203, 0
+This numerical representation allows the model to process and learn from the text efficiently.
+
+Neural Network Training
+This process is far more complex than described here, if you would like a more detailed explanation you can find a visualization on Transformer Neural Net 3D visualizer.
+
+On a high-level overview, a sequence of 0 to, for example, 16,000 tokens is fed into a neural network along with its parameters (or weights). The model then calculates the probabilities of all possible next tokens. During training, the model's parameters are slightly adjusted through a mathematical optimization process, refining the probability distribution to make the correct token more likely.
+
+neural-net-training-diagram
+
+Initially, the model produces random predictions because its parameters are untrained. However, over time, as the parameters are fine-tuned, its output become more coherent and meaningful.
+
+You can think of the parameters as levers that shape how the model interprets and generates text.
+
+The ultimate goal is to train the neural network to refine its predictions, aligning them with the patterns found in the dataset over time.
+
+Inference
+Once you are satisfied with the predictions of the trained neural network, based on the specific parameters you've set, you can move on to inference. Inference is the process of generating new data from the model, token by token. The goal is to produce sequences that, if you're lucky, don't exactly match any in the original training dataset.
+
+When you interact with this trained model, it performs inference by generating responses token by token. The model has been trained in the past and keeps the parameters fixed during interactions, meaning the model generates new content based on the learned patterns rather than updating its parameters in real time.
+
+At this point, the base model can complete sentences, but it hasn't yet been trained to act as a helpful assistant. That happens in the post-training phase.
+
+Post-Training
+In this phase, we fine-tune the model's behavior. For example, if we're building a conversational AI like ChatGPT, we need to train it on conversational datasets to make it respond naturally. While the earlier phases handled most of the heavy lifting, this stage is much shorter (hours vs months).
+
+A common method, in the past, for post-training is using human labelers, who are often subject experts who create, review and rate responses to ensure they match the desired style and quality. However, recent advancements have introduced a new approach: using another LLM to generate these conversational datasets. One example is UltraChat, which automates the process and speeds up dataset creation for fine-tuning.
+
+With conversations, there are special tokens that structure the conversation. An example of this could be, for GPT-4o, where you have:
+
+a system prompt: "You are a helpful assistant"
+a question of the user: "What is the capital of France?"
+an answer: "Paris"
+<|im_start|>system<|im_sep|>You are a helpful assistant<|im_end|>  
+<|im_start|>user<|im_sep|>What is the captital of France?<|im_end|>  
+<|im_start|>assistant<|im_sep|>Paris<|im_end|>  
+<|im_start|>assistant<|im_sep|>
+You can see each of these values is embedded in tags:
+
+<|im_start|>: inner monologue start
+<|im_sep|>: inner monologue separator
+<|im_end|>: inner monologue end
+After structuring the conversation, it's tokenized and used for training. The resulting token sequence might look like this:
+
+200264, 17360, 200266, 3575, 553, 261, 10297, 29186, 200265, 4066,  
+200264, 1428, 200266, 4827, 382, 290, 8444, 2258, 328, 10128, 30,  
+200265, 4066, 200264, 173781, 200266, 72782, 200265, 4066, 200264,  
+173781, 200266  
+These tokenized sequences help the model learn how to structure and respond to conversations naturally.
+
+In the end, you get a conversational model that generates responses based on statistical probabilities. It combines knowledge from the large dataset used in pre-training with insights from human labelers during post-training, all structured in a natural dialogue format.
+
+Reinforcement Learning (RL)
+Reinforcement Learning is the final major phase in the process and is often considered a part of post-training. While pre-training focuses on acquiring theoretical knowledge and fine-tuning involves learning with expert guidance, reinforcement learning is the "practice problems" stage. In this phase, the model moves on to solving practice problems. The model is given questions and answers, but not the steps to get there. It learns by trying different actions, receiving feedback based on its performance, and adjusting its approach over time. This trial-and-error process helps the model improve, allowing it to handle more complex, real-world challenges.
+
+An example flow would be:
+
+The model generates multiple possible responses.
+Each response is evaluated based on a predefined reward function (for accuracy, clarity, and usefulness).
+The average score of all responses is calculated.
+Each response is compared to the average, with higher-scoring responses being favored.
+The model adjusts and reinforces behaviors that lead to better responses.
+For example, imagine training a model to solve basic math problems while also improving its reasoning. We give it the question: "What is 2 + 2?" The model then generates different responses, which are evaluated and scored based on correctness, reasoning quality, and potential mistakes.
+
+
+Expand table view 2
+#	Response	Correct Answer (+1)	Clear Reasoning (+0.5)	Incorrect Reasoning (-0.5)	Spelling Mistakes (-0.5)	Total Score
+1	"The answer is 4."	+1	0	0	0	1.0
+2	"2 plus 2 means adding two to two. That equals 4."	+1	+0.5	0	0	1.5
+3	"First, start with 2. Then, add 2 more. That gives us 4."	+1	+0.5	0	0	1.5
+4	"2 + 2 = 5."	0	0	-0.5	0	-0.5
+5	"Two pus two eqals four."	+1	+0.5	0	-0.5	1.0
+From this, we can see that responses 2 and 3 are preferred because they provide the correct answer and a clear reasoning process. Over time, reinforcement learning helps the model favor well-explained solutions rather than just guessing the answer.
+
+Reinforcement Learning from Human Feedback (RLHF)
+While reinforcement learning works well for tasks with clear right or wrong answers, like math or coding, some tasks such as writing a poem, joke, or opinion-based response can't be scored automatically.
+
+In these cases, Reinforcement Learning from Human Feedback (RLHF) is used instead of automatic scoring, humans review, rank, or score responses based on quality, relevance, or creativity. The model then adjusts its behavior using the reward system that favors higher-ranked responses. The AI model learns to generate answers that better align with human preferences.
+
+One challenge with RLHF is that since these answers aren’t objectively verifiable the model can exploit the reward function in unintended ways, called reward hacking, leading to unexpected or biased outputs. To prevent this, RLHF is typically run for a limited number of iterations, unlike traditional reinforcement learning, which can be trained extensively.
+
+LLM Evolution
+The table below gives you a better idea of the scale and rapid evolution of LLMs. In just four years, there have been significant increases in dataset sizes, number of parameters, and context windows, allowing for an increase in the performance of these new models:
+
+
+Expand table view 3
+Model	Released	Dataset Size	Parameters	Context Window
+GPT-2	2019	40 GB of text	1.6 billion	1,024 tokens
+GPT-4	2023	1 petabyte of text	1.8 trillion	128,000 tokens
+Overview of LLM Models and Tools
+As using AI tools for coding continues to grow in popularity, a variety of LLM models and coding tools have emerged.
+
+LLMs come in different types to serve various tasks. Here is a high-level overview:
+
+Foundation models are trained on massive datasets to understand a wide range of language patterns, such as GPT-4.
+Fine-tuning models are pre-trained and then adjusted in post-training on smaller datasets for specific tasks like sentiment analysis or question-answering, with examples like ChatGPT, BERT, DeepSeek-Coder and more.
+Reasoning models are designed with capabilities for logical inference, problem-solving, and decision-making. Examples are the OpenAI o1, o3 series and DeepSeek R1.
+Multimodal models combine text with other types of data, like images or video, to create advanced models that can generate text descriptions of images or vice versa, such as DALL-E.
+Below is a snapshot of some key models and tools that could be useful for developers and others working with AI. This list is not exhaustive, as many other tools are available across various domains.
+
+LLM Models
+Models
+GPT-4 (OpenAI)
+Gemini 2.0 (Google DeepMind)
+LLaMA 3.3 (Meta)
+DeepSeek R1 (DeepSeek) and DeepSeek Coder
+Claude 3.7 Sonnet (Anthropic)
+Grok 3 (xAI)
+Benchmarks
+SWE-bench Verified Leaderboard: A benchmark that evaluates based on real-world programming tasks from open-source repositories sourced from GitHub.
+LiveBench: A contamination-free benchmark for LLMs that performs objective evaluation tasks across coding, reasoning, mathematics, and more.
+WebDev Arena: A real-time AI coding competition where models go head-to-head in web development challenges.
+Aider LLM Leaderboard: Ranks popular models based on their ability to edit code across multiple languages, including C++, Go, Java, JavaScript, Python, and Rust.
+BigCode LLM Leaderboard: Evaluates open-source models hosted on Hugging Face for code generation and completion tasks.
+LLM Coding Tools
+Chats
+ChatGPT (OpenAI)
+Gemini Chat (Google DeepMind)
+LLaMA Chat (Meta)
+DeepSeek Chat (DeepSeek)
+Claude Chat (Anthropic)
+Grok Chat (xAI)
+Le Chat (Mistral)
+Search Engine
+Perplexity.ai
+IDE Tools
+GitHub Copilot (OpenAI)
+Tabnine
+Q Developer (Amazon)
+AI Assistant (JetBrains)
+Aider (Aider)
+Cline
+Claude-code
+IDEs
+Cursor.ai
+Windsurf Editor
+Trae.ai
+Zed
+Conclusion
+With these capabilities come challenges. LLMs are powerful but face issues like bias in training data, ethical concerns, and limitations in reasoning abilities. For example:
+
+The quality of the training data directly impacts the accuracy of the generated information. Publicly available data may be outdated, insecure, or incomplete, either intentionally or unintentionally.
+Coverage across topics can vary, leading to information gaps which can cause hallucinations (incorrect or fabricated responses).
+Limited context windows can result in hallucinated responses as well.
+Models have training cut-off dates, meaning they may not reflect the latest technologies.
+Understanding how LLMs work is the first step toward understanding these risks and managing them effectively.
